@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import App from '../src/components/app/app.js'
-import './bootstrap.css'
+import App from '../src/components/app';
+import './bootstrap.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
