@@ -1,0 +1,16 @@
+.error-indicator {
+ display: flex;
+ flex-direction: column;
+ text-align: -webkit-center;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.error-indicator img {
+  margin-bottom: 10px;
+}
+
+.error-indicator span {
+  /* display: block; */
+  color: rgb(199, 134, 13);
+}
