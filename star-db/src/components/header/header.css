@@ -17,3 +17,11 @@
 h3 a:nth-child(1) {
   color: #fff;
 }
+
+.header a {
+  color: rgb(116, 116, 221);
+}
+
+.header a:hover {
+  color: rgb(116, 116, 221);
+}
