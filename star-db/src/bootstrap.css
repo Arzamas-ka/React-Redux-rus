@@ -162,13 +162,13 @@ sup {
 }
 
 a {
-  color: #00bc8c;
+  color: #fd7e14;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #007053;
+  color: #110070;
   text-decoration: underline;
 }
 
@@ -2751,6 +2751,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #F39C12;
   border-color: #F39C12;
+  margin-bottom: 20px;
 }
 
 .btn-warning:hover {
