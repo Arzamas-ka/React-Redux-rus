@@ -2,11 +2,11 @@
   padding: 0;
 }
 
-.item-list .list-group-item {
+.item-list-group .list-group-item {
   cursor: pointer;
 }
 
-.item-list .list-group-item:hover {
+.item-list-group .list-group-item:hover {
   background-color: #444;
 }
 
