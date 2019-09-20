@@ -10,7 +10,14 @@ import './app.css';
 
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      showRandomPlanet: true,
+      hasError: false
+    };
+  }
   state = {
     showRandomPlanet: true,
     hasError: false
