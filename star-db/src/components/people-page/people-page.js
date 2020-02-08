@@ -1,19 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ItemList from "../item-list/item-list";
-import PersonDetails from "../person-details/person-details";
-import "../people-page/people-page.css";
-import ErrorIndicator from "../error-indicator/error-indicator";
+import ItemList from '../item-list/item-list';
+import PersonDetails from '../person-details/person-details';
+import ErrorIndicator from '../error-indicator/error-indicator';
 
+import '../people-page/people-page.css';
 export default class PeoplePage extends Component {
   state = {
     selectedPerson: null,
     hasError: false
   };
 
-  onPersonSelected = selectedPerson => {
+  onPersonSelected = id => {
     this.setState({
-      selectedPerson: 2
+      selectedPerson: id
     });
   };
 
@@ -24,9 +24,7 @@ export default class PeoplePage extends Component {
   }
 
   render() {
-    if (this.state.hasError) {
-      return <ErrorIndicator />;
-    }
+    if (this.state.hasError) return <ErrorIndicator />;
 
     return (
       <div className="row mb2">

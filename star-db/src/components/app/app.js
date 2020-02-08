@@ -8,7 +8,6 @@ import PeoplePage from '../people-page';
 
 import './app.css';
 
-
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -24,44 +23,43 @@ export default class App extends Component {
   };
 
   toggleRandomPlanet = () => {
-    this.setState((state) => {
+    this.setState(state => {
       return {
         showRandomPlanet: !state.showRandomPlanet
-      }
+      };
     });
   };
 
   componentDidCatch() {
     this.setState({
       hasError: true
-    })
+    });
   }
 
-  render () {
-
+  render() {
     if (this.state.hasError) {
-      return <ErrorIndicator />
+      return <ErrorIndicator />;
     }
 
     const planet = this.state.showRandomPlanet ? <RandomPlanet /> : null;
 
     return (
-      <div className='app'>
+      <div className="app">
         <Header />
-        { planet }
+        {planet}
 
-      <div className='row mb2 button-row'>
-        <button className="toggle-planet btn btn-warning btn-lg"
-          onClick={this.toggleRandomPlanet}>
-          Toggle Random Planet
-        </button>
-        <ErrorButton />
+        <div className="row mb2 button-row">
+          <button
+            className="toggle-planet btn btn-warning btn-lg"
+            onClick={this.toggleRandomPlanet}
+          >
+            Toggle Random Planet
+          </button>
+          <ErrorButton />
+        </div>
+
+        <PeoplePage />
       </div>
-
-      <PeoplePage />
-
-    </div>  
     );
   }
 }
-
