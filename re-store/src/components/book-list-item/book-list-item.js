@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './book-list-item.css';
 
 const BookListItem = ({ book, onAddedToCart }) => {
@@ -13,8 +14,9 @@ const BookListItem = ({ book, onAddedToCart }) => {
         <div className="book-author">{author}</div>
         <div className="book-price">${price}</div>
         <button
+          className="btn btn-info add-to-cart"
           onClick={onAddedToCart}
-          className="btn btn-info add-to-cart">
+        >
           Add to cart
         </button>
       </div>

@@ -44,7 +44,7 @@ const fetchBooks = (bookstoreService, dispatch) => () => {
   dispatch(booksRequested());
   bookstoreService.getBooks()
     .then((data) => dispatch(booksLoaded(data)))
-    .catch((err) => dispatch(booksError(err)));
+    .catch((error) => dispatch(booksError(error)));
 };
 
 export {

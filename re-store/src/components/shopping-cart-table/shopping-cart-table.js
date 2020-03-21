@@ -4,34 +4,44 @@ import { connect } from 'react-redux';
 import {
   bookAddedToCart,
   bookRemovedFromCart,
-  allBooksRemovedFromCart } from '../../actions';
+  allBooksRemovedFromCart
+} from '../../actions';
 
 import './shopping-cart-table.css';
 
-const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) => {
-  const renderRow = (item, idx) => {
+const ShoppingCartTable = ({
+  items,
+  total,
+  onIncrease,
+  onDecrease,
+  onDelete
+}) => {
+  const renderRow = (item, index) => {
     const { id, title, count, total } = item;
     return (
       <tr key={id}>
-        <td>{idx + 1}</td>
+        <td>{index + 1}</td>
         <td>{title}</td>
         <td>{count}</td>
         <td>${total}</td>
         <td>
           <button
             onClick={() => onDelete(id)}
-            className="btn btn-outline-danger btn-sm float-right">
-            <i className="fa fa-trash-o" />
+            className='btn btn-outline-danger btn-sm float-right'
+          >
+            <i className='fa fa-trash-o' />
           </button>
           <button
             onClick={() => onIncrease(id)}
-            className="btn btn-outline-success btn-sm float-right">
-            <i className="fa fa-plus-circle" />
+            className='btn btn-outline-success btn-sm float-right'
+          >
+            <i className='fa fa-plus-circle' />
           </button>
           <button
             onClick={() => onDecrease(id)}
-            className="btn btn-outline-warning btn-sm float-right">
-            <i className="fa fa-minus-circle" />
+            className='btn btn-outline-warning btn-sm float-right'
+          >
+            <i className='fa fa-minus-circle' />
           </button>
         </td>
       </tr>
@@ -39,9 +49,9 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
   };
 
   return (
-    <div className="shopping-cart-table">
+    <div className='shopping-cart-table'>
       <h2>Your Order</h2>
-      <table className="table">
+      <table className='table'>
         <thead>
           <tr>
             <th>#</th>
@@ -52,19 +62,15 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
           </tr>
         </thead>
 
-        <tbody>
-        { items.map(renderRow) }
-        </tbody>
+        <tbody>{items.map(renderRow)}</tbody>
       </table>
 
-      <div className="total">
-        Total: ${total}
-      </div>
+      <div className='total'>Total: ${total}</div>
     </div>
   );
 };
 
-const mapStateToProps = ({ cartItems, orderTotal }) => {
+const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }) => {
   return {
     items: cartItems,
     total: orderTotal
